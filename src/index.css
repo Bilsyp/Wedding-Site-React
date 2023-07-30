@@ -6,12 +6,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-y: hidden; */
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+
   /* padding-bottom: 1000px; */
 }
 @layer components {
@@ -88,6 +89,7 @@ nav {
   width: fit-content;
   position: relative;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .List_Item li::before {
@@ -130,7 +132,8 @@ nav {
     position: absolute;
     top: 100%;
     width: 80%;
-    right: 0;
+    left: 0;
+    transition: all 200ms;
     padding: 20px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -139,7 +142,7 @@ nav {
     flex-direction: column;
     gap: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-    transform: translateX(1000%);
+    transform: translateX(-1000%);
     /* align-items: flex-end; */
   }
   .show {

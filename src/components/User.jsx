@@ -3,6 +3,10 @@ import { AiFillHeart } from "react-icons/ai";
 const User = () => {
   return (
     <div className='User'>
+      <h2 className='text-center pt-10 text-xl'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+        deleniti!x
+      </h2>
       <div className='container_user  flex justify-center items-center mt-10 flex-col gap-10 relative md:flex-row md:gap-1'>
         <div className='user_only'>
           <img src='/images/girl.png' alt='' />
