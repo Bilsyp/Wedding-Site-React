@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-y: hidden; */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  /* padding-bottom: 1000px; */
+}
+@layer components {
+  .countdown {
+    @apply flex justify-center items-center gap-6 mt-7;
+  }
+  .box {
+    @apply bg-pink-500 rounded-full w-16 h-16 flex text-white drop-shadow cursor-pointer justify-center items-center flex-col sm:w-20 sm:h-20 md:w-28 md:h-28 hover:bg-shadows hover:scale-110 duration-150;
+  }
+  .Hero_Content h2 {
+    @apply text-5xl sm:text-6xl md:text-7xl;
+  }
+  .user_only {
+    @apply flex p-8 flex-col;
+  }
+  .user_only h1 {
+    @apply font-sacra text-5xl py-3 font-bold text-gray-800;
+  }
+  .user_only p {
+    @apply font-semibold;
+  }
+}
+nav {
+  border-bottom: 1px solid gray;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.User::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: url("/images/bg-flower.jpg") center center/cover;
+}
+.User {
+  position: relative;
+  /* height: 100vh; */
+}
+.Hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: url("/images/wedding.jpg") center center/cover;
+  filter: grayscale(90%);
+}
+
+.Hero {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+}
+
+.Hero_Content h2 {
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.user_only {
+  text-align: center;
+}
+.user_only:nth-child(1) img {
+  /* order: 1; */
+  /* justify-self: flex-end; */
+  align-self: flex-end;
+}
+
+.List_Item li {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+}
+
+.List_Item li::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  transition: all 200ms;
+}
+
+.List_Item li:hover::before {
+  width: 100%;
+}
+
+.User img {
+  width: 280px !important;
+  height: 280px !important;
+  border-radius: 50%;
+}
+.container_user button {
+  animation: animas 10s ease-in-out infinite;
+}
+
+@keyframes animas {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@media screen and (max-width: 640px) {
+  .List_Item {
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    right: 0;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    transform: translateX(1000%);
+    /* align-items: flex-end; */
+  }
+  .show {
+    transform: translateX(0);
+  }
+  .List_Item li {
+    font-size: 1.5rem;
+  }
+  .user_only:nth-child(1) img {
+    /* order: 1; */
+    /* justify-self: flex-end; */
+    align-self: flex-start;
+  }
+
+  .user_only:nth-child(2) img {
+    /* order: 1; */
+    /* justify-self: flex-end; */
+    align-self: flex-end;
+  }
+
+  .user_only:nth-child(1) h1 {
+    text-align: left;
+  }
+
+  .user_only:nth-child(2) h1 {
+    text-align: right;
+  }
+}
